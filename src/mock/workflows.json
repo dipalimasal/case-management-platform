@@ -1,0 +1,75 @@
+[
+  {
+    "workflowId": "customer-standard",
+    "screeningType": "CUSTOMER_SCREENING",
+    "initialLevel": "L1",
+    "initialStatus": "L1_INVESTIGATION",
+    "states": ["NEW", "L1_INVESTIGATION", "L2_INVESTIGATION", "L3_INVESTIGATION", "ON_HOLD", "RESOLVED", "CLOSED"],
+    "transitions": [
+      { "from": "NEW", "to": "L1_INVESTIGATION", "action": "ASSIGN", "label": "Start Investigation" },
+      { "from": "L1_INVESTIGATION", "to": "L2_INVESTIGATION", "action": "ESCALATE", "label": "Escalate to L2" },
+      { "from": "L2_INVESTIGATION", "to": "L3_INVESTIGATION", "action": "ESCALATE", "label": "Escalate to L3" },
+      { "from": "L1_INVESTIGATION", "to": "RESOLVED", "action": "RESOLVE", "label": "Resolve", "requiresDecision": true },
+      { "from": "L2_INVESTIGATION", "to": "RESOLVED", "action": "RESOLVE", "label": "Resolve", "requiresDecision": true },
+      { "from": "L3_INVESTIGATION", "to": "RESOLVED", "action": "RESOLVE", "label": "Resolve", "requiresDecision": true },
+      { "from": "L1_INVESTIGATION", "to": "ON_HOLD", "action": "ON_HOLD", "label": "Put On Hold", "requiresReason": true },
+      { "from": "L2_INVESTIGATION", "to": "ON_HOLD", "action": "ON_HOLD", "label": "Put On Hold", "requiresReason": true },
+      { "from": "L3_INVESTIGATION", "to": "ON_HOLD", "action": "ON_HOLD", "label": "Put On Hold", "requiresReason": true },
+      { "from": "ON_HOLD", "to": "L1_INVESTIGATION", "action": "ASSIGN", "label": "Resume" },
+      { "from": "RESOLVED", "to": "L1_INVESTIGATION", "action": "REOPEN", "label": "Reopen Case" },
+      { "from": "RESOLVED", "to": "CLOSED", "action": "CLOSE", "label": "Close Case" }
+    ]
+  },
+  {
+    "workflowId": "transaction-standard",
+    "screeningType": "TRANSACTION_SCREENING",
+    "initialLevel": "L1",
+    "initialStatus": "L1_INVESTIGATION",
+    "states": ["NEW", "L1_INVESTIGATION", "L2_INVESTIGATION", "L3_INVESTIGATION", "ON_HOLD", "RESOLVED", "CLOSED"],
+    "transitions": [
+      { "from": "NEW", "to": "L1_INVESTIGATION", "action": "ASSIGN", "label": "Start Investigation" },
+      { "from": "L1_INVESTIGATION", "to": "L2_INVESTIGATION", "action": "ESCALATE", "label": "Escalate to L2" },
+      { "from": "L2_INVESTIGATION", "to": "L3_INVESTIGATION", "action": "ESCALATE", "label": "Escalate to L3" },
+      { "from": "L1_INVESTIGATION", "to": "RESOLVED", "action": "RESOLVE", "label": "Resolve", "requiresDecision": true },
+      { "from": "L2_INVESTIGATION", "to": "RESOLVED", "action": "RESOLVE", "label": "Resolve", "requiresDecision": true },
+      { "from": "L3_INVESTIGATION", "to": "RESOLVED", "action": "RESOLVE", "label": "Resolve", "requiresDecision": true },
+      { "from": "L1_INVESTIGATION", "to": "ON_HOLD", "action": "ON_HOLD", "label": "Put On Hold", "requiresReason": true },
+      { "from": "L2_INVESTIGATION", "to": "ON_HOLD", "action": "ON_HOLD", "label": "Put On Hold", "requiresReason": true },
+      { "from": "ON_HOLD", "to": "L1_INVESTIGATION", "action": "ASSIGN", "label": "Resume" },
+      { "from": "RESOLVED", "to": "L1_INVESTIGATION", "action": "REOPEN", "label": "Reopen Case" }
+    ]
+  },
+  {
+    "workflowId": "high-risk-transaction",
+    "screeningType": "TRANSACTION_SCREENING",
+    "initialLevel": "L2",
+    "initialStatus": "L2_INVESTIGATION",
+    "states": ["NEW", "L2_INVESTIGATION", "L3_INVESTIGATION", "ON_HOLD", "RESOLVED", "CLOSED"],
+    "transitions": [
+      { "from": "NEW", "to": "L2_INVESTIGATION", "action": "ASSIGN", "label": "Start L2 Investigation" },
+      { "from": "L2_INVESTIGATION", "to": "L3_INVESTIGATION", "action": "ESCALATE", "label": "Escalate to L3" },
+      { "from": "L2_INVESTIGATION", "to": "RESOLVED", "action": "RESOLVE", "label": "Resolve", "requiresDecision": true },
+      { "from": "L3_INVESTIGATION", "to": "RESOLVED", "action": "RESOLVE", "label": "Resolve", "requiresDecision": true },
+      { "from": "L2_INVESTIGATION", "to": "ON_HOLD", "action": "ON_HOLD", "label": "Put On Hold", "requiresReason": true },
+      { "from": "ON_HOLD", "to": "L2_INVESTIGATION", "action": "ASSIGN", "label": "Resume" },
+      { "from": "RESOLVED", "to": "L2_INVESTIGATION", "action": "REOPEN", "label": "Reopen Case" }
+    ]
+  },
+  {
+    "workflowId": "security-standard",
+    "screeningType": "SECURITY_SCREENING",
+    "initialLevel": "L1",
+    "initialStatus": "L1_INVESTIGATION",
+    "states": ["NEW", "L1_INVESTIGATION", "L2_INVESTIGATION", "L3_INVESTIGATION", "ON_HOLD", "RESOLVED", "CLOSED"],
+    "transitions": [
+      { "from": "NEW", "to": "L1_INVESTIGATION", "action": "ASSIGN", "label": "Start Investigation" },
+      { "from": "L1_INVESTIGATION", "to": "L2_INVESTIGATION", "action": "ESCALATE", "label": "Escalate to L2" },
+      { "from": "L2_INVESTIGATION", "to": "L3_INVESTIGATION", "action": "ESCALATE", "label": "Escalate to L3" },
+      { "from": "L1_INVESTIGATION", "to": "RESOLVED", "action": "RESOLVE", "label": "Resolve", "requiresDecision": true },
+      { "from": "L2_INVESTIGATION", "to": "RESOLVED", "action": "RESOLVE", "label": "Resolve", "requiresDecision": true },
+      { "from": "L3_INVESTIGATION", "to": "RESOLVED", "action": "RESOLVE", "label": "Resolve", "requiresDecision": true },
+      { "from": "L1_INVESTIGATION", "to": "ON_HOLD", "action": "ON_HOLD", "label": "Put On Hold", "requiresReason": true },
+      { "from": "RESOLVED", "to": "L1_INVESTIGATION", "action": "REOPEN", "label": "Reopen Case" }
+    ]
+  }
+]

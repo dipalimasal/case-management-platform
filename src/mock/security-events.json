@@ -1,0 +1,107 @@
+[
+  {
+    "id": "sec-001",
+    "eventId": "SEC-EVT-20250814-001",
+    "eventType": "Credential Compromise",
+    "detectionSource": "SIEM - Splunk",
+    "detectionTime": "2025-08-14T03:22:00Z",
+    "severity": "Critical",
+    "riskScore": 95,
+    "subject": {
+      "name": "Corporate Admin Portal",
+      "entityType": "System Account",
+      "country": "United States",
+      "associatedEntities": ["admin.svc@bankcorp.com", "VPN Gateway US-EAST-1"]
+    },
+    "threatInfo": {
+      "category": "Account Takeover",
+      "trigger": "Impossible travel login detected",
+      "indicators": ["Login from Lagos, Nigeria at 03:22 UTC", "Previous login from New York at 03:15 UTC", "MFA bypass attempt detected", "Privilege escalation command executed"],
+      "screeningResult": "Active Threat - Immediate Response Required"
+    }
+  },
+  {
+    "id": "sec-002",
+    "eventId": "SEC-EVT-20250813-042",
+    "eventType": "Data Exfiltration Attempt",
+    "detectionSource": "DLP - Forcepoint",
+    "detectionTime": "2025-08-13T18:45:00Z",
+    "severity": "High",
+    "riskScore": 82,
+    "subject": {
+      "name": "James Morrison",
+      "entityType": "Employee",
+      "country": "United Kingdom",
+      "associatedEntities": ["james.morrison@bankcorp.com", "Workstation-UK-4421"]
+    },
+    "threatInfo": {
+      "category": "Insider Threat",
+      "trigger": "Bulk download of customer PII files",
+      "indicators": ["Downloaded 2,400 customer records in 15 minutes", "Access to restricted KYC database", "USB device connected post-download"],
+      "screeningResult": "Under Investigation"
+    }
+  },
+  {
+    "id": "sec-003",
+    "eventId": "SEC-EVT-20250812-018",
+    "eventType": "Phishing Campaign",
+    "detectionSource": "Email Security - Proofpoint",
+    "detectionTime": "2025-08-12T09:10:00Z",
+    "severity": "Medium",
+    "riskScore": 58,
+    "subject": {
+      "name": "External - invoice-update@paymnt-portal.net",
+      "entityType": "External Actor",
+      "country": "Unknown",
+      "associatedEntities": ["paymnt-portal.net", "47 targeted employees"]
+    },
+    "threatInfo": {
+      "category": "Social Engineering",
+      "trigger": "Targeted spear-phishing against finance team",
+      "indicators": ["Spoofed vendor invoice domain", "Credential harvesting link", "47 emails sent in 2 hours"],
+      "screeningResult": "Contained - 3 clicks reported"
+    }
+  },
+  {
+    "id": "sec-004",
+    "eventId": "SEC-EVT-20250811-007",
+    "eventType": "API Abuse",
+    "detectionSource": "WAF - Cloudflare",
+    "detectionTime": "2025-08-11T22:30:00Z",
+    "severity": "High",
+    "riskScore": 76,
+    "subject": {
+      "name": "Unknown Actor (IP Range 185.220.x.x)",
+      "entityType": "External Actor",
+      "country": "Netherlands (Tor Exit Node)",
+      "associatedEntities": ["/api/v2/transactions endpoint", "API Key: ak_live_****7821"]
+    },
+    "threatInfo": {
+      "category": "Unauthorized Access",
+      "trigger": "Abnormal API call volume from Tor exit node",
+      "indicators": ["12,000 requests in 30 minutes", "Transaction enumeration pattern", "Valid API key - possibly compromised"],
+      "screeningResult": "API Key Revoked - Monitoring"
+    }
+  },
+  {
+    "id": "sec-005",
+    "eventId": "SEC-EVT-20250810-003",
+    "eventType": "Malware Detection",
+    "detectionSource": "EDR - CrowdStrike",
+    "detectionTime": "2025-08-10T14:55:00Z",
+    "severity": "Critical",
+    "riskScore": 91,
+    "subject": {
+      "name": "Trading Floor Workstation TF-118",
+      "entityType": "Endpoint",
+      "country": "Singapore",
+      "associatedEntities": ["Workstation TF-118", "User: tan.wei@bankcorp.com", "Trading Application Server"]
+    },
+    "threatInfo": {
+      "category": "Malware",
+      "trigger": "Ransomware precursor detected on trading floor",
+      "indicators": ["Emotet variant identified", "Lateral movement attempt to file server", "Shadow copy deletion command blocked"],
+      "screeningResult": "Quarantined - Forensics in Progress"
+    }
+  }
+]

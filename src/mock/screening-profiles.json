@@ -1,0 +1,26 @@
+[
+  {
+    "id": "customer-screening",
+    "name": "Customer Screening",
+    "type": "CUSTOMER_SCREENING",
+    "workflow": "customer-standard",
+    "uiProfile": "customer-investigation",
+    "enabled": true
+  },
+  {
+    "id": "transaction-screening",
+    "name": "Transaction Screening",
+    "type": "TRANSACTION_SCREENING",
+    "workflow": "transaction-standard",
+    "uiProfile": "transaction-investigation",
+    "enabled": true
+  },
+  {
+    "id": "security-screening",
+    "name": "Security Screening",
+    "type": "SECURITY_SCREENING",
+    "workflow": "security-standard",
+    "uiProfile": "security-investigation",
+    "enabled": true
+  }
+]

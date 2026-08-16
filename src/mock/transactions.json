@@ -1,0 +1,99 @@
+[
+  {
+    "id": "txn-001",
+    "transactionId": "TXN-20250814-88421",
+    "transactionDate": "2025-08-14T09:32:00Z",
+    "amount": 2500000,
+    "currency": "USD",
+    "sender": "Meridian Trading Corp",
+    "senderAccount": "SG-8847291034",
+    "beneficiary": "Offshore Holdings Ltd",
+    "beneficiaryAccount": "KY-9928173645",
+    "country": "Cayman Islands",
+    "paymentType": "SWIFT MT103",
+    "message": "{1:F01BANKUS33AXXX0000000000}{2:I103BANKKY33XXXXN}{3:{108:MT103}}{4:\n:20:TXN-20250814-88421\n:23B:CRED\n:32A:250814USD2500000,00\n:50K:/SG-8847291034\nMeridian Trading Corp\n10 Raffles Place\nSingapore 048618\n:59:/KY-9928173645\nOffshore Holdings Ltd\nGrand Cayman\n:70:Invoice payment INV-2025-8842\n:71A:OUR\n-}",
+    "screeningResults": [
+      { "rule": "HIGH_VALUE_CROSS_BORDER", "alertReason": "Transaction exceeds $1M threshold to high-risk jurisdiction", "match": "Offshore Holdings Ltd", "riskScore": 82, "ruleTriggered": true },
+      { "rule": "SHELL_COMPANY_INDICATOR", "alertReason": "Beneficiary registered in known shell company jurisdiction", "match": "Cayman Islands entity", "riskScore": 75, "ruleTriggered": true }
+    ],
+    "relatedCustomerId": "cust-002",
+    "relatedTransactionIds": ["txn-004"]
+  },
+  {
+    "id": "txn-002",
+    "transactionId": "TXN-20250813-77219",
+    "transactionDate": "2025-08-13T14:15:00Z",
+    "amount": 485000,
+    "currency": "EUR",
+    "sender": "Helix Pharmaceuticals AG",
+    "senderAccount": "CH-7738291045",
+    "beneficiary": "Global Med Supplies Inc",
+    "beneficiaryAccount": "US-5544332211",
+    "country": "United States",
+    "paymentType": "ISO 20022 pacs.008",
+    "message": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\">\n  <FIToFICstmrCdtTrf>\n    <GrpHdr>\n      <MsgId>TXN-20250813-77219</MsgId>\n      <CreDtTm>2025-08-13T14:15:00</CreDtTm>\n      <NbOfTxs>1</NbOfTxs>\n      <SttlmInf><SttlmMtd>INDA</SttlmMtd></SttlmInf>\n    </GrpHdr>\n    <CdtTrfTxInf>\n      <PmtId><EndToEndId>TXN-20250813-77219</EndToEndId></PmtId>\n      <IntrBkSttlmAmt Ccy=\"EUR\">485000.00</IntrBkSttlmAmt>\n      <Dbtr><Nm>Helix Pharmaceuticals AG</Nm></Dbtr>\n      <DbtrAcct><Id><IBAN>CH7738291045</IBAN></Id></DbtrAcct>\n      <Cdtr><Nm>Global Med Supplies Inc</Nm></Cdtr>\n      <CdtrAcct><Id><IBAN>US5544332211</IBAN></Id></CdtrAcct>\n      <RmtInf><Ustrd>Medical equipment purchase order PO-99281</Ustrd></RmtInf>\n    </CdtTrfTxInf>\n  </FIToFICstmrCdtTrf>\n</Document>",
+    "screeningResults": [
+      { "rule": "SANCTIONS_ENTITY_MATCH", "alertReason": "Sender matches sanctions screening list", "match": "Helix Pharmaceuticals AG", "riskScore": 94, "ruleTriggered": true }
+    ],
+    "relatedCustomerId": "cust-004",
+    "relatedTransactionIds": []
+  },
+  {
+    "id": "txn-003",
+    "transactionId": "TXN-20250812-66108",
+    "transactionDate": "2025-08-12T11:00:00Z",
+    "amount": 12500,
+    "currency": "GBP",
+    "sender": "Amara Osei",
+    "senderAccount": "GB-1122334455",
+    "beneficiary": "London Property Management",
+    "beneficiaryAccount": "GB-9988776655",
+    "country": "United Kingdom",
+    "paymentType": "Faster Payments",
+    "message": "Domestic Faster Payment\nReference: RENT-AUG-2025\nAmount: GBP 12,500.00\nFrom: Amara Osei (GB-1122334455)\nTo: London Property Management (GB-9988776655)\nPurpose: Monthly rental payment",
+    "screeningResults": [
+      { "rule": "STRUCTURING_PATTERN", "alertReason": "Multiple transactions just below reporting threshold detected", "match": "Amara Osei", "riskScore": 55, "ruleTriggered": true }
+    ],
+    "relatedCustomerId": "cust-003",
+    "relatedTransactionIds": ["txn-005"]
+  },
+  {
+    "id": "txn-004",
+    "transactionId": "TXN-20250810-55097",
+    "transactionDate": "2025-08-10T16:45:00Z",
+    "amount": 1800000,
+    "currency": "USD",
+    "sender": "Offshore Holdings Ltd",
+    "senderAccount": "KY-9928173645",
+    "beneficiary": "Meridian Trading Corp",
+    "beneficiaryAccount": "SG-8847291034",
+    "country": "Singapore",
+    "paymentType": "SWIFT MT103",
+    "message": "{1:F01BANKKY33XXXX0000000000}{2:I103BANKSG33XXXXN}{4:\n:20:TXN-20250810-55097\n:32A:250810USD1800000,00\n:50K:/KY-9928173645\nOffshore Holdings Ltd\n:59:/SG-8847291034\nMeridian Trading Corp\n:70:Investment return Q2 2025\n-}",
+    "screeningResults": [
+      { "rule": "ROUND_TRIPPING", "alertReason": "Circular fund flow detected between related entities", "match": "Meridian Trading Corp ↔ Offshore Holdings Ltd", "riskScore": 88, "ruleTriggered": true }
+    ],
+    "relatedCustomerId": "cust-002",
+    "relatedTransactionIds": ["txn-001"]
+  },
+  {
+    "id": "txn-005",
+    "transactionId": "TXN-20250815-99304",
+    "transactionDate": "2025-08-15T08:20:00Z",
+    "amount": 9800000,
+    "currency": "USD",
+    "sender": "Viktor Petrov",
+    "senderAccount": "AE-6677889900",
+    "beneficiary": "Nexus Capital Fund",
+    "beneficiaryAccount": "LU-4455667788",
+    "country": "Luxembourg",
+    "paymentType": "SWIFT MT202",
+    "message": "{1:F01BANKAE33XXXX0000000000}{2:I202BANKLU33XXXXN}{4:\n:20:TXN-20250815-99304\n:32A:250815USD9800000,00\n:52A:BANKAE33\n:58A:BANKLU33\n:72:/BNF/Nexus Capital Fund\nInvestment transfer - Private equity allocation\n-}",
+    "screeningResults": [
+      { "rule": "HIGH_RISK_JURISDICTION", "alertReason": "Transfer to fund in high-risk jurisdiction with PEP sender", "match": "Viktor Petrov → Nexus Capital Fund", "riskScore": 96, "ruleTriggered": true },
+      { "rule": "VELOCITY_ANOMALY", "alertReason": "Transaction amount 15x average for customer", "match": "Viktor Petrov", "riskScore": 89, "ruleTriggered": true }
+    ],
+    "relatedCustomerId": "cust-001",
+    "relatedTransactionIds": []
+  }
+]

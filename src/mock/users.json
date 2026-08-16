@@ -1,0 +1,44 @@
+[
+  {
+    "id": "user-001",
+    "name": "Sarah Chen",
+    "email": "sarah.chen@bankcorp.com",
+    "role": "Senior Investigator",
+    "team": "AML Operations"
+  },
+  {
+    "id": "user-002",
+    "name": "James Okafor",
+    "email": "james.okafor@bankcorp.com",
+    "role": "Investigator",
+    "team": "AML Operations"
+  },
+  {
+    "id": "user-003",
+    "name": "Maria Santos",
+    "email": "maria.santos@bankcorp.com",
+    "role": "Team Lead",
+    "team": "Transaction Monitoring"
+  },
+  {
+    "id": "user-004",
+    "name": "David Kim",
+    "email": "david.kim@bankcorp.com",
+    "role": "Security Analyst",
+    "team": "Fraud & Security"
+  },
+  {
+    "id": "user-005",
+    "name": "Emily Watson",
+    "email": "emily.watson@bankcorp.com",
+    "role": "Senior Analyst",
+    "team": "KYC Operations"
+  },
+  {
+    "id": "user-006",
+    "name": "Raj Patel",
+    "email": "raj.patel@bankcorp.com",
+    "role": "Investigator",
+    "team": "AML Operations"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "cust-001",
+    "customerId": "CUS-78432",
+    "name": "Viktor Petrov",
+    "dateOfBirth": "1978-03-15",
+    "nationality": "Russian",
+    "country": "United Arab Emirates",
+    "customerType": "Individual",
+    "riskRating": "High",
+    "kycStatus": "Enhanced Due Diligence Required",
+    "relatedParties": [
+      { "name": "Petrov Holdings LLC", "relationship": "Beneficial Owner", "country": "UAE", "risk": "Medium", "screeningStatus": "Potential Match" },
+      { "name": "Elena Petrov", "relationship": "Spouse", "country": "Russia", "risk": "Low", "screeningStatus": "Clear" }
+    ],
+    "screeningResults": [
+      { "source": "World-Check", "matchName": "Viktor Petrov", "matchType": "PEP", "matchScore": 87, "matchStatus": "Under Review" },
+      { "source": "OFAC SDN", "matchName": "V. Petrov", "matchType": "Sanctions", "matchScore": 62, "matchStatus": "False Positive Likely" }
+    ]
+  },
+  {
+    "id": "cust-002",
+    "customerId": "CUS-91205",
+    "name": "Meridian Trading Corp",
+    "dateOfBirth": "2015-06-01",
+    "nationality": "Singapore",
+    "country": "Singapore",
+    "customerType": "Corporate",
+    "riskRating": "Medium",
+    "kycStatus": "Verified",
+    "relatedParties": [
+      { "name": "Tan Wei Ming", "relationship": "Director", "country": "Singapore", "risk": "Low", "screeningStatus": "Clear" },
+      { "name": "Pacific Logistics Ltd", "relationship": "Subsidiary", "country": "Hong Kong", "risk": "Medium", "screeningStatus": "Clear" }
+    ],
+    "screeningResults": [
+      { "source": "Dow Jones", "matchName": "Meridian Trading", "matchType": "Adverse Media", "matchScore": 71, "matchStatus": "Under Review" }
+    ]
+  },
+  {
+    "id": "cust-003",
+    "customerId": "CUS-55891",
+    "name": "Amara Osei",
+    "dateOfBirth": "1992-11-22",
+    "nationality": "Ghanaian",
+    "country": "United Kingdom",
+    "customerType": "Individual",
+    "riskRating": "Low",
+    "kycStatus": "Verified",
+    "relatedParties": [
+      { "name": "Kwame Osei", "relationship": "Business Partner", "country": "Ghana", "risk": "Low", "screeningStatus": "Clear" }
+    ],
+    "screeningResults": [
+      { "source": "World-Check", "matchName": "Amara Osei", "matchType": "PEP", "matchScore": 45, "matchStatus": "False Positive" }
+    ]
+  },
+  {
+    "id": "cust-004",
+    "customerId": "CUS-33467",
+    "name": "Helix Pharmaceuticals AG",
+    "dateOfBirth": "2008-02-14",
+    "nationality": "Swiss",
+    "country": "Switzerland",
+    "customerType": "Corporate",
+    "riskRating": "High",
+    "kycStatus": "Pending Review",
+    "relatedParties": [
+      { "name": "Dr. Hans Mueller", "relationship": "CEO", "country": "Switzerland", "risk": "Medium", "screeningStatus": "Under Review" },
+      { "name": "BioPharm Distribution SA", "relationship": "Distributor", "country": "Panama", "risk": "High", "screeningStatus": "Match Found" }
+    ],
+    "screeningResults": [
+      { "source": "OFAC SDN", "matchName": "Helix Pharma", "matchType": "Sanctions", "matchScore": 91, "matchStatus": "Confirmed Match" },
+      { "source": "EU Consolidated", "matchName": "Helix Pharmaceuticals", "matchType": "Sanctions", "matchScore": 88, "matchStatus": "Under Review" }
+    ]
+  },
+  {
+    "id": "cust-005",
+    "customerId": "CUS-67123",
+    "name": "Fatima Al-Rashid",
+    "dateOfBirth": "1985-07-08",
+    "nationality": "Saudi Arabian",
+    "country": "Saudi Arabia",
+    "customerType": "Individual",
+    "riskRating": "Medium",
+    "kycStatus": "Verified",
+    "relatedParties": [
+      { "name": "Al-Rashid Family Trust", "relationship": "Beneficiary", "country": "Saudi Arabia", "risk": "Low", "screeningStatus": "Clear" }
+    ],
+    "screeningResults": [
+      { "source": "World-Check", "matchName": "Fatima Al-Rashid", "matchType": "PEP", "matchScore": 78, "matchStatus": "Under Review" }
+    ]
+  }
+]

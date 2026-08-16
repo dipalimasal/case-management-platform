@@ -1,0 +1,33 @@
+[
+  {
+    "uiProfile": "customer-investigation",
+    "screeningType": "CUSTOMER_SCREENING",
+    "sections": [
+      { "id": "customer-details", "component": "CustomerProfile", "title": "Customer Details", "order": 1, "defaultExpanded": true },
+      { "id": "related-parties", "component": "BeneficiaryDetails", "title": "Beneficiary / Related Parties", "order": 2, "defaultExpanded": true },
+      { "id": "screening-results", "component": "ScreeningResults", "title": "Screening Results", "order": 3, "defaultExpanded": true },
+      { "id": "investigation", "component": "InvestigationNotes", "title": "Investigation", "order": 4, "defaultExpanded": true }
+    ]
+  },
+  {
+    "uiProfile": "transaction-investigation",
+    "screeningType": "TRANSACTION_SCREENING",
+    "sections": [
+      { "id": "transaction-message", "component": "TransactionMessage", "title": "Transaction Message", "order": 1, "defaultExpanded": false },
+      { "id": "transaction-details", "component": "TransactionDetails", "title": "Transaction Details", "order": 2, "defaultExpanded": true },
+      { "id": "screening-results", "component": "ScreeningResults", "title": "Screening Results", "order": 3, "defaultExpanded": true },
+      { "id": "related-info", "component": "RelatedCases", "title": "Related Information", "order": 4, "defaultExpanded": true },
+      { "id": "investigation", "component": "InvestigationNotes", "title": "Investigation", "order": 5, "defaultExpanded": true }
+    ]
+  },
+  {
+    "uiProfile": "security-investigation",
+    "screeningType": "SECURITY_SCREENING",
+    "sections": [
+      { "id": "security-event", "component": "SecurityEvent", "title": "Security Event", "order": 1, "defaultExpanded": true },
+      { "id": "subject", "component": "SecuritySubject", "title": "Subject", "order": 2, "defaultExpanded": true },
+      { "id": "threat-info", "component": "ThreatRiskInfo", "title": "Threat / Risk Information", "order": 3, "defaultExpanded": true },
+      { "id": "investigation", "component": "InvestigationNotes", "title": "Investigation", "order": 4, "defaultExpanded": true }
+    ]
+  }
+]
