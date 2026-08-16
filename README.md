@@ -2,9 +2,11 @@
 
 A React prototype demonstrating a **single Case Management Platform** supporting multiple screening types through configuration.
 
-## Architecture
+> **Architecture documentation:** See [ARCHITECTURE.md](./ARCHITECTURE.md) for the full system design — layers, configuration model, workflow engine, component registry, data flow, and production migration path.
 
-```
+## Overview
+
+```text
 One Case Management Platform
   → Multiple Screening Types (Customer, Transaction, Security)
   → Reusable UI Components (Component Registry)
@@ -32,6 +34,13 @@ npm run dev
 
 Open http://localhost:5173
 
+## Documentation
+
+| Document | Description |
+|----------|-------------|
+| [ARCHITECTURE.md](./ARCHITECTURE.md) | System architecture, layers, configuration model, workflows, extension points |
+| [README.md](./README.md) | Quick start, demo scenarios, project overview |
+
 ## Key Demo Scenarios
 
 | Scenario | Case ID | What to observe |
@@ -47,15 +56,15 @@ Open http://localhost:5173
 
 Components never import JSON directly. All data flows through services:
 
-```
+```text
 React Component → caseService / workflowService / configurationService → Mock JSON
 ```
 
-Later: swap service implementations to call REST APIs without changing components.
+Later: swap service implementations to call REST APIs without changing components. See [ARCHITECTURE.md §4.2](./ARCHITECTURE.md#42-service-layer) for details.
 
 ## Project Structure
 
-```
+```text
 src/
 ├── components/     # UI components by domain
 ├── config/         # Component registry
